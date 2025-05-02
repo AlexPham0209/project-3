@@ -1,9 +1,11 @@
 import { Table } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import { useEffect, useState } from "react";
-import '../App.css'
+import './App.css'
+import CourseRow from "./CourseRow";
 
-export default function CourseTable({courseComponents}) {
+export default function CourseTable({credits}) {
+
     return (
     <div className="course-table">
         <div className="title">Writing Emphasis of John Wayne</div>
@@ -21,7 +23,7 @@ export default function CourseTable({courseComponents}) {
             </thead>   
 
             <tbody>
-                {courseComponents}
+                <CourseRow></CourseRow>
             </tbody>
         </Table>
     </div>
