@@ -30,32 +30,32 @@ export default function Edit({selected, editCourse}) {
         <Form className='edit-form' onSubmit={onSubmit}>
             <Form.Group className='text-bar' controlId='id'>
                 <Form.Label className='text-description'>ID</Form.Label>
-                <Form.Control className='text-input' type="id" placeholder='Enter ID' defaultValue={course.id} disabled></Form.Control>
+                <Form.Control className='text-input' type="text" placeholder='Enter ID' defaultValue={course.id} disabled></Form.Control>
             </Form.Group>
 
             <Form.Group className='text-bar' controlId='description'>
                 <Form.Label className='text-description'>Description</Form.Label>
-                <Form.Control className='text-input' type="description" placeholder='Enter Description' defaultValue={course.description}></Form.Control>
+                <Form.Control className='text-input' type="text" placeholder='Enter Description' defaultValue={course.description}></Form.Control>
             </Form.Group>
 
             <Form.Group className='text-bar' controlId='semester'>
                 <Form.Label className='text-description'>Semester</Form.Label>
-                <Form.Control className='text-input' type="semester" placeholder='Enter Semester' defaultValue={course.semester}></Form.Control>
+                <Form.Control className='text-input' type="text" placeholder='Enter Semester' defaultValue={course.semester}></Form.Control>
             </Form.Group>
 
             <Form.Group className='text-bar' controlId='prefix'>
                 <Form.Label className='text-description'>Prefix</Form.Label>
-                <Form.Control className='text-input' type="prefix" placeholder='Enter Prefix' defaultValue={course.prefix}></Form.Control>
+                <Form.Control className='text-input' type="text" placeholder='Enter Prefix' defaultValue={course.prefix}></Form.Control>
             </Form.Group>
             
             <Form.Group className='text-bar' controlId='number'>
                 <Form.Label className='text-description'>Number</Form.Label>
-                <Form.Control className='text-input' type="number" placeholder='Enter Number' defaultValue={course.number}></Form.Control>
+                <Form.Control className='text-input' type="text" placeholder='Enter Number' defaultValue={course.number}></Form.Control>
             </Form.Group>
 
             <Form.Group className='text-bar' controlId='grade'>
                 <Form.Label className='text-description'>Grade</Form.Label>
-                <Form.Control className='text-input' type="grade" placeholder='Enter Grade' defaultValue={course.grade}></Form.Control>
+                <Form.Control className='text-input' type="text" placeholder='Enter Grade' defaultValue={course.grade}></Form.Control>
             </Form.Group>
 
             <div className='edit-buttons'>
