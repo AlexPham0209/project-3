@@ -9,13 +9,10 @@ function App() {
   const [name, setName] = useState('');
   const [credits, setCredits] = useState(0);
 
-  console.log(name);
-  console.log(credits);
-
   return (
     <div>
       <Prompt setName={setName} setCredits={setCredits}></Prompt>
-      <CourseTable></CourseTable>
+      <CourseTable name={name} credits={credits}></CourseTable>
     </div>
   )
 }

@@ -5,9 +5,12 @@ export default function Prompt({setName, setCredits}) {
     const onSubmit = (e) => {
         e.preventDefault();
         const {name, credits} = e.target;
-
+        
         setName(name.value);
         setCredits(Number(credits.value));
+
+        // name.value = '';
+        // credits.value = '';
     }
 
     return (

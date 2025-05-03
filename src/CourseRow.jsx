@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import { useEffect, useState } from "react";
 import './App.css'
 
-export default function CourseRow({id=0, description='', semester='', prefix='', number=0, grade='N/A'}) {
+export default function CourseRow({id=0, description='', semester='', prefix='', number='', grade=''}) {
     return (
         <tr>
             <td className="column">{id}</td>
