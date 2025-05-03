@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import './App.css'
 import CourseRow from "./CourseRow";
 
-export default function CourseTable({name, credits}) {
+export default function WritingTable({name, credits}) {
     let numberOfCourses = 0;
 
     if (credits < 40)
@@ -15,14 +15,14 @@ export default function CourseTable({name, credits}) {
         numberOfCourses = 1;
     
     let rows = Array.from({ length: numberOfCourses }, (_, i) => 
-        <CourseRow id={i + 1} description={`Writing${i + 1}`}></CourseRow>
+        (i === 0 ? <CourseRow id={1} prefix={'ENG'} number={'368/371'} description={`Writing${1}` }></CourseRow>
+            : <CourseRow id={i + 1} description={`Writing${i + 1}`}></CourseRow> 
+        )
     );
-
-    rows[0] = <CourseRow id={1} prefix={'ENG'} number={'368/371'} description={`Writing${1}` }></CourseRow>;
 
     return (
     <div className="course-table">
-        <div className="title">Writing Emphasis of {name}</div>
+        <div className="title">Writing Emphasis for {name}</div>
         <Table bordered responsive striped hover style={{width: "100%"}}>
             <thead className="table-light" style={{backgroundColor: "rgb(240, 223, 223)", color: "white"}}>
                 <tr>
