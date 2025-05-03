@@ -5,7 +5,6 @@ import './App.css'
 import CourseRow from "./CourseRow";
 
 export default function CourseTable({credits}) {
-
     return (
     <div className="course-table">
         <div className="title">Writing Emphasis of John Wayne</div>
