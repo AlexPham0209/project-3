@@ -6,17 +6,33 @@ import WritingTable from './WritingTable'
 import Prompt from './Prompt'
 import SpeakingTable from './SpeakingTable'
 
+function Edit() {
+  return (
+    <>
+    </>
+  );
+}
+
+function Table(name, credits) {
+  return (
+    <>
+      <WritingTable name={name} credits={credits}></WritingTable>
+      <SpeakingTable name={name} credits={credits}></SpeakingTable>
+    </>
+  );
+}
+
 function App() {
   const [name, setName] = useState('');
   const [credits, setCredits] = useState(0);
-
+  const [editing, setEditing] = useState(false);
+  
   return (
     <div>
-      <Prompt setName={setName} setCredits={setCredits}></Prompt>
-      <WritingTable name={name} credits={credits}></WritingTable>
-      <SpeakingTable name={name} credits={credits}></SpeakingTable>
+      <Prompt></Prompt>
+      {editing ? Edit() : Table()}
     </div>
-  )
+  );
 }
 
 export default App

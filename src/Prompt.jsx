@@ -9,8 +9,8 @@ export default function Prompt({setName, setCredits}) {
         setName(name.value);
         setCredits(Number(credits.value));
 
-        // name.value = '';
-        // credits.value = '';
+        name.value = '';
+        credits.value = '';
     }
 
     return (
