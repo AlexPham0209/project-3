@@ -4,11 +4,12 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import WritingTable from './WritingTable'
 import Prompt from './Prompt'
+import Edit from './Edit'
 
-
-function Edit() {
+function EditMenu(selected, editCourse) {
   return (
     <>
+    <Edit selected={selected} editCourse={editCourse}></Edit>
     </>
   );
 }
@@ -51,22 +52,52 @@ function createWritingCourses(credits) {
 
 function App() {
   const [name, setName] = useState('');
-  const [credits, setCredits] = useState(0);
+  const [credits, setCredits] = useState(null);
 
-  const [writingCourses, setWritingCourses] = useState([]);
-  const [selected, setSelected] = useState(null);
+  const [courses, setCourses] = useState([]);
+  const [selected, setSelected] = useState({
+    id: null,
+    value: null,
+  });
+
+  function editCourse(id=-1, value=null) {
+    setSelected({
+      id: null,
+      value: null
+    });
+
+    if (id === -1 || value === null)
+      return;
+
+    setCourses(courses.map((course) => course.id === id ? value : course));
+  }
 
   useEffect(() => {
-    setWritingCourses(createWritingCourses(credits));
-    setSelected(null);
+    setCourses(createWritingCourses(credits));
+    
+    setSelected({
+      id: null,
+      value: null
+    });
+  
   }, [credits]); 
+  
 
+  if (credits !== null) {
+    return (
+      <div>
+        <Prompt setName={setName} credits={credits} setCredits={setCredits}></Prompt>
+        {selected.id !== null ? EditMenu(selected, editCourse) : Table(name, courses, setSelected)}
+      </div>
+    );
+  }
+  
   return (
     <div>
-      <Prompt setName={setName} setCredits={setCredits}></Prompt>
-      {selected !== null ? Edit() : Table(name, writingCourses, setSelected)}
+      <Prompt setName={setName} credits={credits} setCredits={setCredits}></Prompt>
     </div>
   );
+
 }
 
 export default App

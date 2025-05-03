@@ -3,21 +3,24 @@ import "bootstrap/dist/css/bootstrap.css";
 import { useEffect, useState } from "react";
 import './App.css'
 
-export default function Course({id=0, description='', semester='', prefix='', number='', grade='', setSelected}) {
+export default function Course({course, setSelected}) {
     const onClick = (index) => {
-        setSelected(index);
+        setSelected({
+            id: index,
+            value: course
+        });
     };
 
     return (
         <tr>
-            <td className="column">{id}</td>
-            <td className="column">{description}</td>
-            <td className="column">{semester}</td>
-            <td className="column">{prefix}</td>
-            <td className="column">{number}</td>
-            <td className="column">{grade}</td>
+            <td className="column">{course.id}</td>
+            <td className="column">{course.description}</td>
+            <td className="column">{course.semester}</td>
+            <td className="column">{course.prefix}</td>
+            <td className="column">{course.number}</td>
+            <td className="column">{course.grade}</td>
             <td className="column">
-                <button className='edit-button' onClick={() => {onClick(id - 1)}}>Edit</button>
+                <button className='edit-button' onClick={() => {onClick(course.id)}}>Edit</button>
             </td>
         </tr>
     );

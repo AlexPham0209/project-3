@@ -6,21 +6,8 @@ import Course from "./Course";
 
 export default function WritingTable({name, courses, setSelected}) {
     let components = courses.map(
-        (course) => {
-            return (
-                <Course
-                id={course.id}
-                description={course.description}
-                semester={course.semester}
-                prefix={course.prefix}
-                number={course.number}
-                grade={course.grade}
-                setSelected={setSelected}
-                >
-                </Course>
-            )
-        }
-    )
+        (course) => <Course course={course} setSelected={setSelected}></Course>
+    );
 
     return (
         <div className="course-table">
