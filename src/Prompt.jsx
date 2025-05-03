@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { Container, Form, FormGroup, Row, Button } from 'react-bootstrap';
-import { propTypes } from 'react-bootstrap/esm/Image';
+import { Form, Button } from 'react-bootstrap';
 // import "bootstrap/dist/css/bootstrap.css";
 
 export default function Prompt({setName, credits, setCredits}) {
