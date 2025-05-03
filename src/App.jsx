@@ -6,11 +6,15 @@ import CourseTable from './CourseTable'
 import Prompt from './Prompt'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [name, setName] = useState('');
+  const [credits, setCredits] = useState(0);
+
+  console.log(name);
+  console.log(credits);
 
   return (
     <div>
-      <Prompt></Prompt>
+      <Prompt setName={setName} setCredits={setCredits}></Prompt>
       <CourseTable></CourseTable>
     </div>
   )
