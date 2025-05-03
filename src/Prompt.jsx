@@ -33,7 +33,6 @@ export default function Prompt({setName, credits, setCredits}) {
         });
     }; 
 
-    console.log(properties);
     return (
         <Form className='course-form' onSubmit={onSubmit}>
             <Form.Group className='text-bar' controlId='name'>

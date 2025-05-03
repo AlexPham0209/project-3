@@ -45,6 +45,9 @@ function App() {
   // Once the credit has changed, we create the list of course objects
   // The number of courses depends on the amount of credits one have
   useEffect(() => {
+    if (credits === null)
+      return;
+    
     let numOfCourses = 0;
 
     if (credits < 40)
@@ -93,7 +96,8 @@ function App() {
   return (
     <div>
       <Prompt setName={setName} credits={credits} setCredits={setCredits}></Prompt>
-      {credits !== null && Table()}
+      {/* {credits !== null && Table()} */}
+      {Table()}
     </div>
   );
 }
