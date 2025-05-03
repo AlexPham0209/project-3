@@ -12,7 +12,7 @@ export default function Prompt({setName, setCredits}) {
         name.value = '';
         credits.value = '';
     }
-
+    
     return (
         <Form className='course-form' onSubmit={onSubmit}>
             <Form.Group className='text-bar' controlId='name'>

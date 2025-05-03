@@ -2,23 +2,25 @@ import { Table } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import { useEffect, useState } from "react";
 import './App.css'
-import CourseRow from "./CourseRow";
+import Course from "./Course";
 
-export default function WritingTable({name, credits}) {
-    let numberOfCourses = 0;
-
-    if (credits < 40)
-        numberOfCourses = 3;
-    else if (credits < 70)
-        numberOfCourses = 2;
-    else
-        numberOfCourses = 1;
-    
-    let rows = Array.from({ length: numberOfCourses }, (_, i) => 
-        (i === 0 ? <CourseRow id={1} prefix={'ENG'} number={'368/371'} description={`Writing${1}`}></CourseRow>
-            : <CourseRow id={i + 1} description={`Writing${i + 1}`}></CourseRow> 
-        )
-    );
+export default function WritingTable({name, courses, setSelected}) {
+    let components = courses.map(
+        (course) => {
+            return (
+                <Course
+                id={course.id}
+                description={course.description}
+                semester={course.semester}
+                prefix={course.prefix}
+                number={course.number}
+                grade={course.grade}
+                setSelected={setSelected}
+                >
+                </Course>
+            )
+        }
+    )
 
     return (
         <div className="course-table">
@@ -37,7 +39,7 @@ export default function WritingTable({name, credits}) {
                 </thead>   
 
                 <tbody>
-                    {rows}
+                    {components}
                 </tbody>
             </Table>
         </div>

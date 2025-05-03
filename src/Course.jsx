@@ -3,7 +3,11 @@ import "bootstrap/dist/css/bootstrap.css";
 import { useEffect, useState } from "react";
 import './App.css'
 
-export default function CourseRow({id=0, description='', semester='', prefix='', number='', grade=''}) {
+export default function Course({id=0, description='', semester='', prefix='', number='', grade='', setSelected}) {
+    const onClick = (index) => {
+        setSelected(index);
+    };
+
     return (
         <tr>
             <td className="column">{id}</td>
@@ -13,7 +17,7 @@ export default function CourseRow({id=0, description='', semester='', prefix='',
             <td className="column">{number}</td>
             <td className="column">{grade}</td>
             <td className="column">
-                <button className='edit-button'>Edit</button>
+                <button className='edit-button' onClick={() => {onClick(id - 1)}}>Edit</button>
             </td>
         </tr>
     );
