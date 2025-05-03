@@ -9,7 +9,7 @@ import Edit from './Edit'
 function EditMenu(selected, editCourse) {
   return (
     <>
-    <Edit selected={selected} editCourse={editCourse}></Edit>
+      <Edit selected={selected} editCourse={editCourse}></Edit>
     </>
   );
 }
@@ -60,13 +60,13 @@ function App() {
     value: null,
   });
 
-  function editCourse(id=-1, value=null) {
+  function editCourse(id=null, value=null) {
     setSelected({
       id: null,
       value: null
     });
 
-    if (id === -1 || value === null)
+    if (id === null || value === null)
       return;
 
     setCourses(courses.map((course) => course.id === id ? value : course));
@@ -79,7 +79,6 @@ function App() {
       id: null,
       value: null
     });
-  
   }, [credits]); 
   
 

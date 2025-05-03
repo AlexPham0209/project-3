@@ -18,12 +18,12 @@ export default function Edit({selected, editCourse}) {
         }
 
         editCourse(selected.id, course);
-    }
+    };
 
     const onCancel = (e) => {
         e.preventDefault();
         editCourse();
-    }
+    };
     
     return (
         <Form className='edit-form' onSubmit={onSubmit}>
@@ -59,7 +59,7 @@ export default function Edit({selected, editCourse}) {
 
             <div className='edit-buttons'>
                 <Button type='submit' style={{marginBottom: '20px'}}>Submit</Button>
-                <Button type='cancel' onClick={onCancel}>Cancel</Button>
+                <Button type='cancel' variant="secondary" onClick={onCancel}>Cancel</Button>
             </div>
         </Form>
     );
