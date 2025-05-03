@@ -25,7 +25,7 @@ export default function Edit({selected, editCourse}) {
         e.preventDefault();
         editCourse();
     };
-    
+
     return (
         <Form className='edit-form' onSubmit={onSubmit}>
             <Form.Group className='text-bar' controlId='id'>
@@ -59,7 +59,7 @@ export default function Edit({selected, editCourse}) {
             </Form.Group>
 
             <div className='edit-buttons'>
-                <Button type='submit' style={{marginBottom: '20px'}}>Submit</Button>
+                <Button type='submit' style={{marginBottom: '20px'}}>Save</Button>
                 <Button type='cancel' variant="secondary" onClick={onCancel}>Cancel</Button>
             </div>
         </Form>
