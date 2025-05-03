@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 import './App.css'
 import Course from "./Course";
 
-export default function WritingTable({name, courses, setSelected}) {
-    let components = courses.map(
+export default function CourseTable({group, name, courses, setSelected}) {
+    let components = courses.filter((course) => course.group === group.toLowerCase()).map(
         (course) => <Course course={course} setSelected={setSelected}></Course>
     );
 
     return (
         <div className="course-table">
-            <div className="title">Writing Emphasis for {name}</div>
+            <div className="title">{group} Emphasis for {name}</div>
             <Table bordered responsive striped hover style={{width: "100%"}}>
                 <thead className="table-light" style={{backgroundColor: "rgb(240, 223, 223)", color: "white"}}>
                     <tr>

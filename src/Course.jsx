@@ -3,10 +3,12 @@ import "bootstrap/dist/css/bootstrap.css";
 import { useEffect, useState } from "react";
 import './App.css'
 
+
 export default function Course({course, setSelected}) {
-    const onClick = (index) => {
+    const onClick = (group, id) => {
         setSelected({
-            id: index,
+            group: group,
+            id: id,
             value: course
         });
     };
@@ -20,7 +22,7 @@ export default function Course({course, setSelected}) {
             <td className="column">{course.number}</td>
             <td className="column">{course.grade}</td>
             <td className="column">
-                <button className='edit-button' onClick={() => {onClick(course.id)}}>Edit</button>
+                <button className='edit-button' onClick={() => {onClick(course.group.toLowerCase(), course.id)}}>Edit</button>
             </td>
         </tr>
     );

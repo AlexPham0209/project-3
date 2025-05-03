@@ -9,6 +9,7 @@ export default function Edit({selected, editCourse}) {
         const {id, description, semester, prefix, number, grade} = e.target;
 
         const course =  {
+            group: selected.group,
             id: id.value,
             description: description.value,
             semester: semester.value,
@@ -17,7 +18,7 @@ export default function Edit({selected, editCourse}) {
             grade: grade.value
         }
 
-        editCourse(selected.id, course);
+        editCourse(selected.group, selected.id, course);
     };
 
     const onCancel = (e) => {
