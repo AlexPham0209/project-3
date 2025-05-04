@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.css";
-import './App.css'
+import '../App.css'
 
 
 export default function Course({course, setSelected}) {
@@ -10,7 +10,7 @@ export default function Course({course, setSelected}) {
             value: course
         });
     };
-
+    
     return (
         <tr>
             <td className="column">{course.id}</td>

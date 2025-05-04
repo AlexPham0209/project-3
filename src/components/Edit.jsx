@@ -1,5 +1,5 @@
 import { Container, Form, FormGroup, Row, Button } from 'react-bootstrap';
-import './App.css'
+import '../App.css'
 
 export default function Edit({selected, editCourse}) {
     const course = selected.value;

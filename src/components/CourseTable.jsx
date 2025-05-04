@@ -1,7 +1,6 @@
 import { Table } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
-import { useEffect, useState } from "react";
-import './App.css'
+import '../App.css'
 import Course from "./Course";
 
 export default function CourseTable({group, name, courses, setSelected}) {

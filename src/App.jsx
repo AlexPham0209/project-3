@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import CourseTable from './CourseTable'
-import Prompt from './Prompt'
-import Edit from './Edit'
+import CourseTable from './components/CourseTable'
+import Prompt from './components/Prompt'
+import Edit from './components/Edit'
 
 
 function createCourse(group='', id=0, description='', semester='', prefix='', number='', grade='') {
@@ -25,6 +25,12 @@ function createCourses(numOfCourses) {
     let speakingCourses = Array.from({ length: numOfCourses }, (_, i) => 
       createCourse('speaking', i + 1, `Speaking${i + 1}`)
     );
+
+    writingCourses[0].prefix = 'ENG';
+    writingCourses[0].number = '368/371';
+
+    speakingCourses[0].prefix = 'SPK';
+    speakingCourses[0].number = '208/230';
 
     return writingCourses.concat(speakingCourses);
 }
@@ -50,7 +56,7 @@ function App() {
 
     if (credits < 40)
       numOfCourses = 3;
-    else if (credits < 70)
+    else if (credits <= 70)
       numOfCourses = 2;
     else
       numOfCourses = 1;
@@ -94,7 +100,6 @@ function App() {
   return (
     <div>
       <Prompt setName={setName} credits={credits} setCredits={setCredits}></Prompt>
-      {/* {credits !== null && Table()} */}
       {Table()}
     </div>
   );
