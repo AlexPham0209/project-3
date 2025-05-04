@@ -1,8 +1,8 @@
-# Project 2 - Alex Pham
+# Project 3 - Alex Pham
 
 ## How to Install
 
-Open terminal and go to the root of the project-2 directory 
+Open terminal and go to the root of the project-3 directory 
 
 Enter following commands:
 ```
